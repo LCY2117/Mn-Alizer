@@ -1,5 +1,7 @@
 # 锰渣智治平台（锰智云枢）
 
+> **English Summary:** This project is an integrated intelligent platform for the full-cycle governance and resource utilization of electrolytic manganese slag. It covers five core stages: **edge sensing** (on-site autonomous sampling and mobile video capture), **cloud hub** (risk diagnosis and pre-treatment determination), **AI brain** (resource-utilization path selection and formula optimization), **digital twin** (performance, compliance, and economic verification), and **commercial loop** (buyer matching, logistics, contract summaries, and low-carbon value management). The platform is built with a React + Vite frontend and a Node.js/Express + WebSocket backend, and integrates a SiliconFlow-powered AI assistant called 锰智助手.
+
 锰渣智治平台（锰智云枢）是一个面向电解锰渣全流程治理与资源化利用的一体化智能系统。系统围绕“采、诊、决、算、交付”五个核心环节展开：先通过现场无人采样和移动视频采集获取可信原始数据，再在云端完成风险诊断与预处理判定，随后由 AI 对资源化路径和配方进行寻优，在数字孪生环节验证性能、合规和经济性，最后落到买方需求、运输组织、方案文档和低碳价值管理，形成从现场到交付的完整业务闭环。
 
 ---
