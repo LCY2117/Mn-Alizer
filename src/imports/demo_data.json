@@ -1,0 +1,705 @@
+{
+  "project": {
+    "project_name": "锰智云枢",
+    "demo_title": "锰渣智治平台",
+    "version": "v1.1-evidence",
+    "last_updated": "2026-03-22"
+  },
+  "batch": {
+    "batch_id": "EMS-2026-0322-A",
+    "job_ticket_id": "JOB-TR-260322-07",
+    "operation_batch": "OP-BATCH-0322-1",
+    "site_name": "贵州铜仁锰渣堆场",
+    "province": "贵州省",
+    "city": "铜仁市",
+    "lat": 27.7189,
+    "lng": 109.1914,
+    "total_quantity_tons": 10000,
+    "device_id": "EDGE-ROVER-07",
+    "operator_team": "铜仁现场采样班组A",
+    "current_owner": "AI决策中枢 / 工艺工程岗",
+    "data_status": "诊断完成，待方案下发",
+    "timestamps": {
+      "sampling_started": "2026-03-22 09:10",
+      "last_point_collected": "2026-03-22 09:46",
+      "uploaded_at": "2026-03-22 09:49",
+      "diagnosed_at": "2026-03-22 09:53",
+      "updated_at": "2026-03-22 10:08"
+    },
+    "source_type": "demo_assumption"
+  },
+  "sampling": {
+    "water_content_pct": 25,
+    "ph": 6.8,
+    "soluble_manganese_mg_l": 182,
+    "ammonia_nitrogen_mg_l": 318,
+    "particle_size_distribution": {
+      "lt_75um_pct": 62,
+      "75_to_500um_pct": 28,
+      "gt_500um_pct": 10
+    },
+    "sample_points": [
+      {
+        "point_id": "SP-01",
+        "timestamp": "2026-03-22 09:18",
+        "lat": 27.7191,
+        "lng": 109.1916,
+        "water_content_pct": 24,
+        "ph": 6.9,
+        "soluble_manganese_mg_l": 178,
+        "ammonia_nitrogen_mg_l": 301,
+        "status": "已采",
+        "upload_status": "已上传",
+        "review_note": "主检通过",
+        "source_type": "demo_assumption"
+      },
+      {
+        "point_id": "SP-02",
+        "timestamp": "2026-03-22 09:24",
+        "lat": 27.7193,
+        "lng": 109.1918,
+        "water_content_pct": 26,
+        "ph": 6.7,
+        "soluble_manganese_mg_l": 185,
+        "ammonia_nitrogen_mg_l": 327,
+        "status": "已采",
+        "upload_status": "延迟补传",
+        "review_note": "4G链路抖动后补传成功",
+        "source_type": "demo_assumption"
+      },
+      {
+        "point_id": "SP-03",
+        "timestamp": "2026-03-22 09:31",
+        "lat": 27.7188,
+        "lng": 109.1912,
+        "water_content_pct": 25,
+        "ph": 6.8,
+        "soluble_manganese_mg_l": 182,
+        "ammonia_nitrogen_mg_l": 318,
+        "status": "已采",
+        "upload_status": "已上传",
+        "review_note": "主检通过",
+        "source_type": "demo_assumption"
+      },
+      {
+        "point_id": "SP-04",
+        "timestamp": "2026-03-22 09:38",
+        "lat": 27.7186,
+        "lng": 109.191,
+        "water_content_pct": 23,
+        "ph": 7.0,
+        "soluble_manganese_mg_l": 176,
+        "ammonia_nitrogen_mg_l": 295,
+        "status": "待复核",
+        "upload_status": "已上传",
+        "review_note": "pH漂移，建议二次比对",
+        "source_type": "demo_assumption"
+      },
+      {
+        "point_id": "SP-05",
+        "timestamp": "2026-03-22 09:46",
+        "lat": 27.7184,
+        "lng": 109.1915,
+        "water_content_pct": 27,
+        "ph": 6.8,
+        "soluble_manganese_mg_l": 189,
+        "ammonia_nitrogen_mg_l": 349,
+        "status": "采样中",
+        "upload_status": "待上传",
+        "review_note": "末端点位采样完成，等待云端合并",
+        "source_type": "demo_assumption"
+      }
+    ],
+    "source_type": "demo_assumption"
+  },
+  "diagnosis": {
+    "risk_level": "高",
+    "risk_score": 86,
+    "confidence": 0.93,
+    "model_version": "risk-engine-2.4.1",
+    "risk_dimensions": [
+      {
+        "name": "重金属风险",
+        "score": 92
+      },
+      {
+        "name": "氨氮风险",
+        "score": 88
+      },
+      {
+        "name": "含水率风险",
+        "score": 58
+      },
+      {
+        "name": "粒径波动",
+        "score": 64
+      }
+    ],
+    "pretreatment_advice": [
+      "脱氨预处理",
+      "调湿",
+      "分级筛分"
+    ],
+    "evidence": [
+      {
+        "metric": "可溶性锰 Mn2+",
+        "measured_value": 182,
+        "unit": "mg/L",
+        "threshold": 2,
+        "threshold_unit": "mg/L",
+        "standard_ref": "企业内控阈值 / HJ 557-2010 浸出风险预警口径",
+        "severity_reason": "超内部预警线 91 倍，是高风险主因",
+        "conclusion": "触发重金属高风险",
+        "source_type": "demo_assumption"
+      },
+      {
+        "metric": "氨氮 NH3-N",
+        "measured_value": 318,
+        "unit": "mg/L",
+        "threshold": 25,
+        "threshold_unit": "mg/L",
+        "standard_ref": "项目预处理控制阈值",
+        "severity_reason": "超预处理线 12.7 倍，需先脱氨再进入资源化路线",
+        "conclusion": "触发氨氮高风险",
+        "source_type": "demo_assumption"
+      },
+      {
+        "metric": "含水率",
+        "measured_value": 25,
+        "unit": "%",
+        "threshold": 30,
+        "threshold_unit": "%",
+        "standard_ref": "工艺入料控制线",
+        "severity_reason": "未超限，但高含水会抬升运输与配料波动",
+        "conclusion": "保留调湿建议",
+        "source_type": "demo_assumption"
+      },
+      {
+        "metric": "<75um 细颗粒占比",
+        "measured_value": 62,
+        "unit": "%",
+        "threshold": 55,
+        "threshold_unit": "%",
+        "standard_ref": "配方分级筛分经验阈值",
+        "severity_reason": "细颗粒偏高，需先筛分后再做路线匹配",
+        "conclusion": "触发分级筛分建议",
+        "source_type": "demo_assumption"
+      }
+    ],
+    "source_type": "demo_assumption"
+  },
+  "materials": [
+    {
+      "material_id": "low_carbon_binder",
+      "material_name": "低碳胶凝材料",
+      "match_score": 95,
+      "is_recommended": true,
+      "eligibility": "可直接推荐",
+      "reason": "成分均衡，适合胶凝体系激发，强度与商业价值最好",
+      "expected_use_case": "矿山修复、预制构件、绿色胶凝材料替代",
+      "blockers": [],
+      "evidence_refs": [
+        "doc_lab_strength",
+        "src_04",
+        "src_02"
+      ],
+      "decision_triggers": [
+        "细颗粒占比较高，适合激发型体系",
+        "28d 强度锚点高于其他路线",
+        "单位价值和碳收益最佳"
+      ],
+      "uncertainty_note": "矿渣采购价待项目地二次询价",
+      "bom": [
+        {
+          "name": "电解锰渣",
+          "pct": 50,
+          "unit_price_cny_per_ton": 0,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "矿渣",
+          "pct": 46,
+          "unit_price_cny_per_ton": 260,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "熟石灰",
+          "pct": 4,
+          "unit_price_cny_per_ton": 433,
+          "source_type": "market_research"
+        }
+      ]
+    },
+    {
+      "material_id": "roadbase_repair",
+      "material_name": "路基修复材料",
+      "match_score": 88,
+      "is_recommended": false,
+      "eligibility": "条件适配",
+      "reason": "具备基层利用潜力，但经济性略弱于胶凝材料",
+      "expected_use_case": "铁路、公路路基回填与修复",
+      "blockers": [
+        "需要更明确的项目侧验收口径"
+      ],
+      "evidence_refs": [
+        "doc_road_test",
+        "src_04",
+        "src_02"
+      ],
+      "decision_triggers": [
+        "28d 强度已有路基利用锚点",
+        "需求侧匹配度高",
+        "但产品溢价不及低碳胶凝材料"
+      ],
+      "uncertainty_note": "骨料本地到场价仍需项目地复核",
+      "bom": [
+        {
+          "name": "电解锰渣",
+          "pct": 35,
+          "unit_price_cny_per_ton": 0,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "粉煤灰",
+          "pct": 20,
+          "unit_price_cny_per_ton": 150,
+          "source_type": "market_research"
+        },
+        {
+          "name": "42.5级水泥",
+          "pct": 8,
+          "unit_price_cny_per_ton": 390,
+          "source_type": "market_research"
+        },
+        {
+          "name": "级配骨料",
+          "pct": 37,
+          "unit_price_cny_per_ton": 39,
+          "source_type": "demo_assumption"
+        }
+      ]
+    },
+    {
+      "material_id": "soft_soil_stabilizer",
+      "material_name": "软土固化材料",
+      "match_score": 81,
+      "is_recommended": false,
+      "eligibility": "备选",
+      "reason": "适配高含水场景，但展示亮点不如低碳胶凝",
+      "expected_use_case": "原位软基加固、应急固化",
+      "blockers": [
+        "缺少当前批次的强度中试数据"
+      ],
+      "evidence_refs": [
+        "src_03"
+      ],
+      "decision_triggers": [
+        "含水率可接受，具备固化应用场景",
+        "但性能数据不完整"
+      ],
+      "uncertainty_note": "需补 7d/28d 强度中试结果",
+      "bom": [
+        {
+          "name": "电解锰渣",
+          "pct": 30,
+          "unit_price_cny_per_ton": 0,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "生石灰",
+          "pct": 12,
+          "unit_price_cny_per_ton": 433,
+          "source_type": "market_research"
+        },
+        {
+          "name": "粉煤灰",
+          "pct": 18,
+          "unit_price_cny_per_ton": 150,
+          "source_type": "market_research"
+        },
+        {
+          "name": "原位土",
+          "pct": 40,
+          "unit_price_cny_per_ton": 15,
+          "source_type": "demo_assumption"
+        }
+      ]
+    },
+    {
+      "material_id": "soil_remediation",
+      "material_name": "土壤改良材料",
+      "match_score": 67,
+      "is_recommended": false,
+      "eligibility": "降级备选",
+      "reason": "可做备选去化方向，但不是本批次最优解",
+      "expected_use_case": "低等级土壤调理与生态修复",
+      "blockers": [
+        "缺少应用侧需求锁定",
+        "缺少当前批次性能与生态安全补充数据"
+      ],
+      "evidence_refs": [
+        "src_03"
+      ],
+      "decision_triggers": [
+        "具备去化意义，但产品化价值最低",
+        "当前批次被更高价值路线覆盖"
+      ],
+      "uncertainty_note": "因应用数据不足，本轮被降级为备选路线",
+      "bom": [
+        {
+          "name": "电解锰渣",
+          "pct": 20,
+          "unit_price_cny_per_ton": 0,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "腐殖载体",
+          "pct": 25,
+          "unit_price_cny_per_ton": 220,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "矿物调理剂",
+          "pct": 15,
+          "unit_price_cny_per_ton": 180,
+          "source_type": "demo_assumption"
+        },
+        {
+          "name": "基土",
+          "pct": 40,
+          "unit_price_cny_per_ton": 12,
+          "source_type": "demo_assumption"
+        }
+      ]
+    }
+  ],
+  "performance": {
+    "low_carbon_binder": {
+      "strength_mpa": {
+        "d3": 15.55,
+        "d7": 27.44,
+        "d28": 44.52
+      },
+      "leaching_pass": true,
+      "standard_badges": [
+        "HJ 557-2010",
+        "JTG/T 3610-2019"
+      ],
+      "evidence_ref": "doc_lab_strength",
+      "test_basis": "《无机盐工业》2024 文献配比：电解锰渣50% + 矿渣46% + 熟石灰4%",
+      "compliance_note": "当前作为最强技术锚点，用于支撑推荐路线",
+      "source_type": "literature"
+    },
+    "roadbase_repair": {
+      "strength_mpa": {
+        "d3": null,
+        "d7": null,
+        "d28": 17.8
+      },
+      "leaching_pass": true,
+      "standard_badges": [
+        "HJ 557-2010",
+        "JTG/T 3610-2019"
+      ],
+      "evidence_ref": "doc_road_test",
+      "test_basis": "《环境科学研究》2025 路基利用锚点，10%掺量时 28d 17.80 MPa",
+      "compliance_note": "具备工程化验证基础，但仍需项目侧配套验收口径",
+      "source_type": "literature"
+    },
+    "soft_soil_stabilizer": {
+      "strength_mpa": {
+        "d3": null,
+        "d7": null,
+        "d28": null
+      },
+      "leaching_pass": true,
+      "standard_badges": [
+        "HJ 557-2010"
+      ],
+      "evidence_ref": "doc_soft_placeholder",
+      "test_basis": "当前批次无直接中试数据，保留为工艺备选",
+      "compliance_note": "路线可行，但证据不足，因此未被推荐",
+      "source_type": "demo_assumption"
+    },
+    "soil_remediation": {
+      "strength_mpa": {
+        "d3": null,
+        "d7": null,
+        "d28": null
+      },
+      "leaching_pass": true,
+      "standard_badges": [
+        "HJ 557-2010"
+      ],
+      "evidence_ref": "doc_soil_placeholder",
+      "test_basis": "当前仅有低等级去化逻辑，缺应用性能支撑",
+      "compliance_note": "生态应用口径待补，本轮作为降级备选",
+      "source_type": "demo_assumption"
+    }
+  },
+  "roi": {
+    "traditional_cost_per_ton": 150,
+    "traditional_total_cost": 1500000,
+    "transport_cost_per_ton_km": 0.4,
+    "market_anchors": {
+      "cement_price_cny_per_ton": 390,
+      "lime_price_cny_per_ton": 433,
+      "flyash_price_cny_per_ton": 150
+    },
+    "by_material": {
+      "low_carbon_binder": {
+        "solution_cost_per_ton": 60,
+        "solution_total_cost": 600000,
+        "gross_saving": 900000,
+        "transport_sensitivity": "对运输半径中等敏感，60km 内仍保持明显成本优势",
+        "profitability_note": "高附加值和高碳收益叠加，是当前批次综合收益最优路线",
+        "cost_basis": [
+          "熟石灰按市场锚点 433 元/吨",
+          "传统处置按 150 元/吨审慎估算",
+          "矿渣单价按项目演示询价 260 元/吨"
+        ],
+        "source_type": "mixed"
+      },
+      "roadbase_repair": {
+        "solution_cost_per_ton": 72,
+        "solution_total_cost": 720000,
+        "gross_saving": 780000,
+        "transport_sensitivity": "对运输半径较敏感，适合 30km 内项目消纳",
+        "profitability_note": "销售半径和工程消纳决定最终利润，作为强商业备选",
+        "cost_basis": [
+          "水泥按 390 元/吨锚点",
+          "粉煤灰按 150 元/吨锚点",
+          "骨料按演示估算 39 元/吨"
+        ],
+        "source_type": "mixed"
+      },
+      "soft_soil_stabilizer": {
+        "solution_cost_per_ton": 79,
+        "solution_total_cost": 790000,
+        "gross_saving": 710000,
+        "transport_sensitivity": "适合近场原位应用，运输影响较小",
+        "profitability_note": "更偏工程处置型价值，收益不如材料化路线",
+        "cost_basis": [
+          "生石灰按 433 元/吨锚点",
+          "粉煤灰按 150 元/吨锚点",
+          "原位土按演示估算 15 元/吨"
+        ],
+        "source_type": "mixed"
+      },
+      "soil_remediation": {
+        "solution_cost_per_ton": 94,
+        "solution_total_cost": 940000,
+        "gross_saving": 560000,
+        "transport_sensitivity": "依赖终端场景和长周期应用验证，商业兑现慢",
+        "profitability_note": "以去化为主，产品化价值最低，因此被降级为备选",
+        "cost_basis": [
+          "腐殖载体按演示询价 220 元/吨",
+          "矿物调理剂按演示询价 180 元/吨"
+        ],
+        "source_type": "mixed"
+      }
+    },
+    "source_type": "mixed"
+  },
+  "buyers": [
+    {
+      "buyer_id": "buyer_01",
+      "buyer_name": "大西南铁路施工段",
+      "buyer_type": "铁路工程",
+      "required_material": "roadbase_repair",
+      "distance_km": 15,
+      "match_score": 98,
+      "planned_quantity_tons": 3000,
+      "estimated_transport_cost_cny": 18000,
+      "quote_valid_until": "2026-03-31",
+      "contact_stage": "已报价待确认",
+      "match_reason": "铁路路基修复需求明确，消纳半径短，验收场景清晰",
+      "document_id": "doc_contract_railway",
+      "source_type": "demo_assumption"
+    },
+    {
+      "buyer_id": "buyer_02",
+      "buyer_name": "铜仁预制构件厂",
+      "buyer_type": "预制构件",
+      "required_material": "low_carbon_binder",
+      "distance_km": 28,
+      "match_score": 91,
+      "planned_quantity_tons": 2500,
+      "estimated_transport_cost_cny": 28000,
+      "quote_valid_until": "2026-03-29",
+      "contact_stage": "技术交流中",
+      "match_reason": "对低碳胶凝材料替代意愿高，具备试生产窗口",
+      "document_id": "doc_contract_precast",
+      "source_type": "demo_assumption"
+    },
+    {
+      "buyer_id": "buyer_03",
+      "buyer_name": "黔东商混站联营体",
+      "buyer_type": "商混站",
+      "required_material": "low_carbon_binder",
+      "distance_km": 43,
+      "match_score": 84,
+      "planned_quantity_tons": 1800,
+      "estimated_transport_cost_cny": 30960,
+      "quote_valid_until": "2026-04-02",
+      "contact_stage": "待技术复核",
+      "match_reason": "关注低碳替代材料，但需要补充试配数据",
+      "document_id": "doc_quote_rm",
+      "source_type": "demo_assumption"
+    }
+  ],
+  "carbon": {
+    "low_carbon_binder": {
+      "reduction_tco2e": 1800,
+      "carbon_price_cny_per_tco2e": 68,
+      "forward_revenue_cny": 122400,
+      "method_note": "按替代熟料型胶凝材料的演示核算边界估算",
+      "factor_source": "项目演示碳核算因子库 v0.3",
+      "evidence_ref": "doc_carbon_note",
+      "source_type": "demo_assumption"
+    },
+    "roadbase_repair": {
+      "reduction_tco2e": 1200,
+      "carbon_price_cny_per_tco2e": 68,
+      "forward_revenue_cny": 81600,
+      "method_note": "按路基材料替代与固废减排双重边界估算",
+      "factor_source": "项目演示碳核算因子库 v0.3",
+      "evidence_ref": "doc_carbon_note",
+      "source_type": "demo_assumption"
+    },
+    "soft_soil_stabilizer": {
+      "reduction_tco2e": 900,
+      "carbon_price_cny_per_tco2e": 68,
+      "forward_revenue_cny": 61200,
+      "method_note": "按现场原位处置减少外运与替代固化剂估算",
+      "factor_source": "项目演示碳核算因子库 v0.3",
+      "evidence_ref": "doc_carbon_note",
+      "source_type": "demo_assumption"
+    },
+    "soil_remediation": {
+      "reduction_tco2e": 600,
+      "carbon_price_cny_per_tco2e": 68,
+      "forward_revenue_cny": 40800,
+      "method_note": "按低等级去化和生态修复边界审慎估算",
+      "factor_source": "项目演示碳核算因子库 v0.3",
+      "evidence_ref": "doc_carbon_note",
+      "source_type": "demo_assumption"
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "doc_lab_strength",
+      "doc_type": "实验报告",
+      "title": "低碳胶凝材料 28d 强度报告摘要",
+      "related_material": "low_carbon_binder",
+      "issued_at": "2026-03-21",
+      "owner": "技术研发组",
+      "status": "已归档",
+      "summary": "对应文献锚点 15.55/27.44/44.52 MPa，用作推荐路线主要性能证据",
+      "source_type": "literature"
+    },
+    {
+      "doc_id": "doc_road_test",
+      "doc_type": "实验报告",
+      "title": "路基修复材料力学锚点摘要",
+      "related_material": "roadbase_repair",
+      "issued_at": "2026-03-21",
+      "owner": "工艺验证组",
+      "status": "已归档",
+      "summary": "28d 强度 17.80 MPa，适合作为工程利用锚点",
+      "source_type": "literature"
+    },
+    {
+      "doc_id": "doc_contract_precast",
+      "doc_type": "合同摘要",
+      "title": "铜仁预制构件厂意向供货单",
+      "related_material": "low_carbon_binder",
+      "issued_at": "2026-03-22",
+      "owner": "市场拓展组",
+      "status": "交流中",
+      "summary": "拟供货 2,500 吨，当前处于技术交流阶段",
+      "source_type": "demo_assumption"
+    },
+    {
+      "doc_id": "doc_contract_railway",
+      "doc_type": "合同摘要",
+      "title": "大西南铁路施工段派单预览",
+      "related_material": "roadbase_repair",
+      "issued_at": "2026-03-22",
+      "owner": "项目交付组",
+      "status": "待确认",
+      "summary": "拟供货 3,000 吨，运输半径 15 km，当前已报价待确认",
+      "source_type": "demo_assumption"
+    },
+    {
+      "doc_id": "doc_quote_rm",
+      "doc_type": "报价单",
+      "title": "黔东商混站低碳胶凝试用报价单",
+      "related_material": "low_carbon_binder",
+      "issued_at": "2026-03-22",
+      "owner": "市场拓展组",
+      "status": "待技术复核",
+      "summary": "拟供货 1,800 吨，需追加试配与技术复核",
+      "source_type": "demo_assumption"
+    },
+    {
+      "doc_id": "doc_carbon_note",
+      "doc_type": "核算说明",
+      "title": "资源化利用碳减排核算口径说明",
+      "related_material": null,
+      "issued_at": "2026-03-22",
+      "owner": "碳资产小组",
+      "status": "演示口径",
+      "summary": "用于说明 CCER 远期收益的核算边界与因子来源",
+      "source_type": "demo_assumption"
+    },
+    {
+      "doc_id": "doc_soft_placeholder",
+      "doc_type": "待补资料",
+      "title": "软土固化中试数据待补",
+      "related_material": "soft_soil_stabilizer",
+      "issued_at": "2026-03-22",
+      "owner": "工艺验证组",
+      "status": "待补",
+      "summary": "需补 7d/28d 强度与工程适配性数据",
+      "source_type": "demo_assumption"
+    },
+    {
+      "doc_id": "doc_soil_placeholder",
+      "doc_type": "待补资料",
+      "title": "土壤改良应用数据待补",
+      "related_material": "soil_remediation",
+      "issued_at": "2026-03-22",
+      "owner": "生态应用组",
+      "status": "待补",
+      "summary": "需补生态安全与应用场景数据",
+      "source_type": "demo_assumption"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "src_01",
+      "title": "电解锰渣传统处理成本与环保税调研",
+      "file": "research_electrolytic_manganese_slag_cost_and_env_tax.md",
+      "source_type": "market_research"
+    },
+    {
+      "source_id": "src_02",
+      "title": "2023-2024年中国西南地区建材价格调研（湖南、贵州）",
+      "file": "southwest_material_price_research_2023_2024.md",
+      "source_type": "market_research"
+    },
+    {
+      "source_id": "src_03",
+      "title": "西南及周边工业商品（生石灰/粉煤灰/电力/运输）价格监测",
+      "file": "I回答--查询西南工业商品最新价格区间数据来源.md",
+      "source_type": "market_research"
+    },
+    {
+      "source_id": "src_04",
+      "title": "电解锰渣路基与低碳胶凝材料标准及文献调研",
+      "file": "电解锰渣路基与低碳胶凝材料_标准及文献调研_2026-03-21.md",
+      "source_type": "literature"
+    }
+  ]
+}
